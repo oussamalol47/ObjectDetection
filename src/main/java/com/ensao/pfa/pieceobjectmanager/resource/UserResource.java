@@ -10,7 +10,7 @@ import com.ensao.pfa.pieceobjectmanager.service.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserResource {
       private final UserService userService;
 
