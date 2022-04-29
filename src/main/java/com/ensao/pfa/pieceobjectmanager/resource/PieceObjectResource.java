@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/pieceobject")
 public class PieceObjectResource {
@@ -36,7 +36,7 @@ public class PieceObjectResource {
         return new ResponseEntity<>(newPieceObject, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update")
+    @PutMapping(value="/update" , consumes="application/json")
     public ResponseEntity<PieceObject> updatePieceObject(@RequestBody PieceObject pieceObject) {
         PieceObject updatePieceObject = pieceObjectService.updatePieceObject(pieceObject);
         return new ResponseEntity<>(updatePieceObject, HttpStatus.OK);

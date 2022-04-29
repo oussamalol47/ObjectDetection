@@ -8,7 +8,7 @@ import com.ensao.pfa.pieceobjectmanager.model.Object;
 import com.ensao.pfa.pieceobjectmanager.service.ObjectService;
 
 import java.util.List;
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/object")
 public class ObjectResource {

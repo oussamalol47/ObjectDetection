@@ -2,15 +2,16 @@ package com.ensao.pfa.pieceobjectmanager.resource;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.ensao.pfa.pieceobjectmanager.model.Piece;
 import com.ensao.pfa.pieceobjectmanager.service.PieceService;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/piece")
+@RequestMapping("/api/piece")
 public class PieceResource {
     private final PieceService pieceService;
 
@@ -19,6 +20,7 @@ public class PieceResource {
     }
 
     @GetMapping("/all")
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     public ResponseEntity<List<Piece>> getAllPieces () {
         List<Piece> pieces = pieceService.findAllPieces();
         return new ResponseEntity<>(pieces, HttpStatus.OK);
