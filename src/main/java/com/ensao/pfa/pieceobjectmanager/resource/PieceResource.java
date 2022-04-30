@@ -20,7 +20,6 @@ public class PieceResource {
     }
 
     @GetMapping("/all")
-    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     public ResponseEntity<List<Piece>> getAllPieces () {
         List<Piece> pieces = pieceService.findAllPieces();
         return new ResponseEntity<>(pieces, HttpStatus.OK);
