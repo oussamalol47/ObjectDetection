@@ -1,5 +1,6 @@
 package com.ensao.pfa.pieceobjectmanager.resource;
 
+import com.ensao.pfa.pieceobjectmanager.model.Object;
 import com.ensao.pfa.pieceobjectmanager.model.PieceObject;
 import com.ensao.pfa.pieceobjectmanager.service.PieceObjectService;
 import org.springframework.http.HttpStatus;
@@ -29,6 +30,13 @@ public class PieceObjectResource {
         PieceObject pieceObject = pieceObjectService.findPieceObjectById(id);
         return new ResponseEntity<>(pieceObject, HttpStatus.OK);
     }
+
+    @GetMapping("/findobjects/{idPiece}")
+    public ResponseEntity<List<Object>> getObjectsByIdPiece (@PathVariable("idPiece") Long idPiece) {
+        List<Object> objects = pieceObjectService.findObjecstByIdPiece(idPiece);
+        return new ResponseEntity<>(objects, HttpStatus.OK);
+    }
+
 
     @PostMapping(value="/add", consumes="application/json")
     public ResponseEntity<PieceObject> addPieceObject(@RequestBody PieceObject pieceObject) {

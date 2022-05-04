@@ -3,6 +3,7 @@ package com.ensao.pfa.pieceobjectmanager.repo;
 import com.ensao.pfa.pieceobjectmanager.model.PieceObject;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 
