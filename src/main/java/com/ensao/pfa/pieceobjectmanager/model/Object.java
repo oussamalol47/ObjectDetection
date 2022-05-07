@@ -7,12 +7,12 @@ import java.io.Serializable;
 public class Object implements Serializable{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private Long idObject;
     private String objectName;
     private Double prediction;
-    private Boolean isUp;
+    private String isUp;
     private Double surfaceObject;
     private Integer orderObject;
 
@@ -21,7 +21,7 @@ public class Object implements Serializable{
 
     }
 
-    public Object(Long idObject, String objectName, Double prediction, Boolean isUp, Double surfaceObject, Integer orderObject) {
+    public Object(Long idObject, String objectName, Double prediction, String isUp, Double surfaceObject, Integer orderObject) {
         this.idObject = idObject;
         this.objectName = objectName;
         this.prediction = prediction;
@@ -54,11 +54,11 @@ public class Object implements Serializable{
         this.prediction = prediction;
     }
 
-    public Boolean getUp() {
+    public String getUp() {
         return isUp;
     }
 
-    public void setUp(Boolean up) {
+    public void setUp(String up) {
         isUp = up;
     }
 

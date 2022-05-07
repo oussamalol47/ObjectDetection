@@ -7,21 +7,23 @@ import java.io.Serializable;
 public class Piece implements Serializable{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private Long idPiece;
     private String pathPiece;
     private String titlePiece;
     private int numberOfObjecInPiece;
+    private String isReference;
 
     public Piece() {
     }
 
-    public Piece(Long idPiece, String pathPiece, String titlePiece, int numberOfObjecInPiece) {
+    public Piece(Long idPiece, String pathPiece, String titlePiece, int numberOfObjecInPiece,String isReference) {
         this.idPiece = idPiece;
         this.pathPiece = pathPiece;
         this.titlePiece = titlePiece;
         this.numberOfObjecInPiece = numberOfObjecInPiece;
+        this.isReference = isReference;
     }
 
     public Long getIdPiece() {
@@ -56,13 +58,22 @@ public class Piece implements Serializable{
         this.numberOfObjecInPiece = numberOfObjecInPiece;
     }
 
+    public String isReference() {
+        return isReference;
+    }
+
+    public void setReference(String reference) {
+        isReference = reference;
+    }
+
     @Override
     public String toString() {
         return "Piece{" +
                 "idPiece=" + idPiece +
                 ", pathPiece='" + pathPiece + '\'' +
                 ", titlePiece='" + titlePiece + '\'' +
-                ", NumberOfObjecIntPiece=" + numberOfObjecInPiece +
+                ", numberOfObjecInPiece=" + numberOfObjecInPiece +
+                ", isReference=" + isReference +
                 '}';
     }
 }
