@@ -12,7 +12,7 @@ public class Object implements Serializable{
     private Long idObject;
     private String objectName;
     private Double prediction;
-    private String isUp;
+    private String upOrDown;
     private Double surfaceObject;
     private Integer orderObject;
 
@@ -21,11 +21,11 @@ public class Object implements Serializable{
 
     }
 
-    public Object(Long idObject, String objectName, Double prediction, String isUp, Double surfaceObject, Integer orderObject) {
+    public Object(Long idObject, String objectName, Double prediction, String upOrDown, Double surfaceObject, Integer orderObject) {
         this.idObject = idObject;
         this.objectName = objectName;
         this.prediction = prediction;
-        this.isUp = isUp;
+        this.upOrDown = upOrDown;
         this.surfaceObject = surfaceObject;
         this.orderObject = orderObject;
     }
@@ -54,12 +54,12 @@ public class Object implements Serializable{
         this.prediction = prediction;
     }
 
-    public String getUp() {
-        return isUp;
+    public String getUpOrDown() {
+        return upOrDown;
     }
 
-    public void setUp(String up) {
-        isUp = up;
+    public void setUpOrDown(String upOrDown) {
+        this.upOrDown = upOrDown;
     }
 
     public Double getSurfaceObject() {
@@ -84,7 +84,7 @@ public class Object implements Serializable{
                 "idObject=" + idObject +
                 ", objectName='" + objectName + '\'' +
                 ", prediction=" + prediction +
-                ", isUp=" + isUp +
+                ", upOrDown='" + upOrDown + '\'' +
                 ", surfaceObject=" + surfaceObject +
                 ", orderObject=" + orderObject +
                 '}';
