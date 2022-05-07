@@ -13,17 +13,17 @@ public class Piece implements Serializable{
     private String pathPiece;
     private String titlePiece;
     private int numberOfObjecInPiece;
-    private String isReference;
+    private String referenceOrNot;
 
     public Piece() {
     }
 
-    public Piece(Long idPiece, String pathPiece, String titlePiece, int numberOfObjecInPiece,String isReference) {
+    public Piece(Long idPiece, String pathPiece, String titlePiece, int numberOfObjecInPiece, String referenceOrNot) {
         this.idPiece = idPiece;
         this.pathPiece = pathPiece;
         this.titlePiece = titlePiece;
         this.numberOfObjecInPiece = numberOfObjecInPiece;
-        this.isReference = isReference;
+        this.referenceOrNot = referenceOrNot;
     }
 
     public Long getIdPiece() {
@@ -58,12 +58,12 @@ public class Piece implements Serializable{
         this.numberOfObjecInPiece = numberOfObjecInPiece;
     }
 
-    public String isReference() {
-        return isReference;
+    public String getReferenceOrNot() {
+        return referenceOrNot;
     }
 
-    public void setReference(String reference) {
-        isReference = reference;
+    public void setReferenceOrNot(String referenceOrNot) {
+        this.referenceOrNot = referenceOrNot;
     }
 
     @Override
@@ -73,7 +73,7 @@ public class Piece implements Serializable{
                 ", pathPiece='" + pathPiece + '\'' +
                 ", titlePiece='" + titlePiece + '\'' +
                 ", numberOfObjecInPiece=" + numberOfObjecInPiece +
-                ", isReference=" + isReference +
+                ", referenceOrNot='" + referenceOrNot + '\'' +
                 '}';
     }
 }
