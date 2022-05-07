@@ -10,6 +10,7 @@ public class Object implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private Long idObject;
+    private String objectName;
     private Double prediction;
     private Boolean isUp;
     private Double surfaceObject;
@@ -20,8 +21,9 @@ public class Object implements Serializable{
 
     }
 
-    public Object(Long idObject, Double prediction, Boolean isUp, Double surfaceObject, Integer orderObject) {
+    public Object(Long idObject, String objectName, Double prediction, Boolean isUp, Double surfaceObject, Integer orderObject) {
         this.idObject = idObject;
+        this.objectName = objectName;
         this.prediction = prediction;
         this.isUp = isUp;
         this.surfaceObject = surfaceObject;
@@ -34,6 +36,14 @@ public class Object implements Serializable{
 
     public void setIdObject(Long idObject) {
         this.idObject = idObject;
+    }
+
+    public String getObjectName() {
+        return objectName;
+    }
+
+    public void setObjectName(String objectName) {
+        this.objectName = objectName;
     }
 
     public Double getPrediction() {
@@ -72,6 +82,7 @@ public class Object implements Serializable{
     public String toString() {
         return "Object{" +
                 "idObject=" + idObject +
+                ", objectName='" + objectName + '\'' +
                 ", prediction=" + prediction +
                 ", isUp=" + isUp +
                 ", surfaceObject=" + surfaceObject +
