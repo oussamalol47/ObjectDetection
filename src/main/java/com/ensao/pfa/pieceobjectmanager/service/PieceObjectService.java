@@ -3,10 +3,13 @@ package com.ensao.pfa.pieceobjectmanager.service;
 import com.ensao.pfa.pieceobjectmanager.exception.PieceObjectNotFoundException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 import com.ensao.pfa.pieceobjectmanager.model.Object;
+import com.ensao.pfa.pieceobjectmanager.model.Piece;
 import com.ensao.pfa.pieceobjectmanager.model.PieceObject;
 import com.ensao.pfa.pieceobjectmanager.repo.PieceObjectRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +22,13 @@ import javax.transaction.Transactional;
 public class PieceObjectService {
     private final PieceObjectRepo pieceObjectRepo;
     private final ObjectService objectService;
+    private final PieceService pieceService;
 
     @Autowired
-    public PieceObjectService(PieceObjectRepo pieceObjectRepo, ObjectService objectService) {
+    public PieceObjectService(PieceObjectRepo pieceObjectRepo, ObjectService objectService, PieceService pieceService) {
         this.pieceObjectRepo = pieceObjectRepo;
         this.objectService = objectService;
+        this.pieceService = pieceService;
     }
 
     public PieceObject addPieceObject(PieceObject pieceObject) {
@@ -69,6 +74,39 @@ public class PieceObjectService {
         }
 
         return objects;
+    }
+
+    public Map<String,Double> comparePiece(Long idPiece)
+    {
+        Map<String,Double> map = new HashMap<String,Double>();
+
+        List<Piece> piecesReference = new ArrayList<>();
+        List<Object> listObjects = findObjecstByIdPiece(idPiece);
+
+        for(int i = 0;i<pieceService.findAllPieces().size();i++)
+        {
+            if(pieceService.findAllPieces().get(i).getReferenceOrNot().equals("true") &&
+                    pieceService.findAllPieces().get(i).getNumberOfObjecInPiece()==pieceService.findPieceById(idPiece).getNumberOfObjecInPiece()){
+                piecesReference.add(pieceService.findAllPieces().get(i));
+            }
+        }
+
+        for(Piece piece:piecesReference) {
+            Double som = 0.0;
+            for (Object objectRef : findObjecstByIdPiece(piece.getIdPiece())) {
+                for (Object objectToCompare : listObjects) {
+                    if (objectToCompare.getSurfaceObject().equals(objectRef.getSurfaceObject()) &&
+                        objectToCompare.getOrderObject().equals(objectRef.getOrderObject()) &&
+                        objectToCompare.getUpOrDown().equals(objectRef.getUpOrDown()) ) {
+                        som = som + 1;
+                    }
+                    map.put(piece.getTitlePiece(), (som*100)/listObjects.size());
+                }
+            }
+        }
+
+
+        return map;
     }
 
     public void deletePieceObject(Long id){

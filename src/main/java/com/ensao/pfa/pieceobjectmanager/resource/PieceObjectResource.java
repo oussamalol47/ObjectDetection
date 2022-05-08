@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/pieceobject")
@@ -37,6 +39,11 @@ public class PieceObjectResource {
         return new ResponseEntity<>(objects, HttpStatus.OK);
     }
 
+    @GetMapping("/compare/{idPiece}")
+    public ResponseEntity<Map<String,Double>> getComparePiece (@PathVariable("idPiece") Long idPiece) {
+        Map<String,Double> resCompare = pieceObjectService.comparePiece(idPiece);
+        return new ResponseEntity<>(resCompare, HttpStatus.OK);
+    }
 
     @PostMapping(value="/add", consumes="application/json")
     public ResponseEntity<PieceObject> addPieceObject(@RequestBody PieceObject pieceObject) {
