@@ -26,7 +26,7 @@ public class SendMailService {
         msg.setTo("mohamed.benziza@ump.ac.ma");
         msg.setFrom("mohamed.benziza@ump.ac.ma");
         msg.setSubject(mail.getObjet());
-        msg.setText(mail.getMessage());
+        msg.setText("Emial : "+mail.getExpediteur()+"\n"+"Message : "+mail.getMessage());
         javaMailSender.send(msg);
         return repository.save(mail);
     }
