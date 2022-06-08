@@ -24,7 +24,7 @@ public class SendMailService {
     public Mail sendMail(Mail mail) throws MailException{
         SimpleMailMessage msg = new SimpleMailMessage();
         msg.setTo(mail.getExpediteur());
-        msg.setFrom("benizizamohamed@gmail.com");
+        msg.setFrom("mohamed.benziza@ump.ac.ma");
         msg.setSubject(mail.getObjet());
         msg.setText(mail.getMessage());
         javaMailSender.send(msg);
