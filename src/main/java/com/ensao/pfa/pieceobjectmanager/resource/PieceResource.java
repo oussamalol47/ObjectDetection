@@ -11,7 +11,7 @@ import com.ensao.pfa.pieceobjectmanager.service.PieceService;
 import java.util.List;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/piece")
+@RequestMapping("/piece")
 public class PieceResource {
     private final PieceService pieceService;
 
