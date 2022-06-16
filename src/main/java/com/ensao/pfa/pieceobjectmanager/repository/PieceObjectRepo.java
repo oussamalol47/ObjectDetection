@@ -1,4 +1,4 @@
-package com.ensao.pfa.pieceobjectmanager.repo;
+package com.ensao.pfa.pieceobjectmanager.repository;
 
 import com.ensao.pfa.pieceobjectmanager.model.PieceObject;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,8 +1,8 @@
 package com.ensao.pfa.pieceobjectmanager.repository;
 
 
-import com.ensao.pfa.pieceobjectmanager.models.ERole;
-import com.ensao.pfa.pieceobjectmanager.models.Role;
+import com.ensao.pfa.pieceobjectmanager.model.ERole;
+import com.ensao.pfa.pieceobjectmanager.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

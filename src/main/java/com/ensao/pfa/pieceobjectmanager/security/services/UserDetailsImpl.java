@@ -1,7 +1,7 @@
 package com.ensao.pfa.pieceobjectmanager.security.services;
 
 
-import com.ensao.pfa.pieceobjectmanager.models.User;
+import com.ensao.pfa.pieceobjectmanager.model.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

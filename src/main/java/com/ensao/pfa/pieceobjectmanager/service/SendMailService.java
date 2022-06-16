@@ -2,7 +2,7 @@ package com.ensao.pfa.pieceobjectmanager.service;
 
 
 import com.ensao.pfa.pieceobjectmanager.model.Mail;
-import com.ensao.pfa.pieceobjectmanager.repo.MailRepository;
+import com.ensao.pfa.pieceobjectmanager.repository.MailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;

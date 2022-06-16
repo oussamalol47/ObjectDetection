@@ -1,6 +1,6 @@
 package com.ensao.pfa.pieceobjectmanager.security.services;
 
-import com.ensao.pfa.pieceobjectmanager.models.User;
+import com.ensao.pfa.pieceobjectmanager.model.User;
 import com.ensao.pfa.pieceobjectmanager.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

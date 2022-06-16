@@ -11,7 +11,7 @@ import java.util.Map;
 import com.ensao.pfa.pieceobjectmanager.model.Object;
 import com.ensao.pfa.pieceobjectmanager.model.Piece;
 import com.ensao.pfa.pieceobjectmanager.model.PieceObject;
-import com.ensao.pfa.pieceobjectmanager.repo.PieceObjectRepo;
+import com.ensao.pfa.pieceobjectmanager.repository.PieceObjectRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

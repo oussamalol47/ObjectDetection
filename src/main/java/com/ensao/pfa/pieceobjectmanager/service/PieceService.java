@@ -2,7 +2,7 @@ package com.ensao.pfa.pieceobjectmanager.service;
 
 import com.ensao.pfa.pieceobjectmanager.exception.PieceNotFoundException;
 import com.ensao.pfa.pieceobjectmanager.model.Piece;
-import com.ensao.pfa.pieceobjectmanager.repo.PieceRepo;
+import com.ensao.pfa.pieceobjectmanager.repository.PieceRepo;
 
 import java.util.List;
 

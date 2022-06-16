@@ -1,7 +1,7 @@
 package com.ensao.pfa.pieceobjectmanager.repository;
 
 
-import com.ensao.pfa.pieceobjectmanager.models.User;
+import com.ensao.pfa.pieceobjectmanager.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

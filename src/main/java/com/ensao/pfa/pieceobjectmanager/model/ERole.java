@@ -1,4 +1,4 @@
-package com.ensao.pfa.pieceobjectmanager.models;
+package com.ensao.pfa.pieceobjectmanager.model;
 
 public enum ERole {
   ROLE_USER,
