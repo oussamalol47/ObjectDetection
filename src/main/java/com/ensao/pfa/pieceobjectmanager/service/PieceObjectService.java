@@ -97,7 +97,8 @@ public class PieceObjectService {
                 for (Object objectToCompare : listObjects) {
                     if (objectToCompare.getSurfaceObject().equals(objectRef.getSurfaceObject()) &&
                         objectToCompare.getOrderObject().equals(objectRef.getOrderObject()) &&
-                        objectToCompare.getUpOrDown().equals(objectRef.getUpOrDown()) ) {
+                        objectToCompare.getUpOrDown().equals(objectRef.getUpOrDown()) &&
+                        objectToCompare.getObjectName().equals(objectRef.getObjectName())) {
                         som = som + 1;
                     }
                     map.put(piece.getTitlePiece(), (som*100)/listObjects.size());
